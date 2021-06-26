@@ -35,10 +35,11 @@ export function useRoom(roomId: string) {
     const { user } = useAuth();
     const [questions, setQuestions] = useState<QuestionType[]>([]);
     const [title, setTitle] = useState('' );
+
  useEffect(() => {
         const roomRef = database().ref(`rooms/${roomId}`);
 
-        roomRef.on("value", (room) => {
+        roomRef.on('value', room => {
             const databaseRoom = room.val();
             const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
 

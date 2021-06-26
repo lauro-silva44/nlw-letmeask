@@ -31,7 +31,7 @@ async function handleCreateRoom(event: FormEvent) {
     authorId: user?.id,
   })
 
-  history.push(`room/${firebaseRoom.key}`)
+  history.push(`/rooms/${firebaseRoom.key}`)
 }
 
   return ( 
