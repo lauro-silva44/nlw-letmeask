@@ -29,6 +29,7 @@ async function handleCreateRoom(event: FormEvent) {
   const firebaseRoom = await roomRef.push({
     title: newRoom, 
     authorId: user?.id,
+    
   })
 
   history.push(`/rooms/${firebaseRoom.key}`)
@@ -53,7 +54,7 @@ async function handleCreateRoom(event: FormEvent) {
 
           <form onSubmit={handleCreateRoom}>
             <input type="text" 
-            placeholder=" Digite o código da sala" 
+            placeholder=" Digite o nome da sala" 
             onChange ={event => setNewRoom(event.target.value)}
             value = {newRoom} />
 
